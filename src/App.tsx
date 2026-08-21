@@ -170,10 +170,12 @@ export default function App() {
               className="flex items-center gap-3 group text-left focus:outline-none"
               id="nav-brand-logo"
             >
-              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D97A2E] flex-shrink-0 bg-white shadow-xs">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D97A2E] flex-shrink-0 bg-[#F5F2E6] flex items-center justify-center shadow-xs">
                 <img
                   src="https://i.postimg.cc/9X80svDL/509362850-750281194004990-9201592945816660086-n.jpg"
                   alt="Kajaki Supraśl logo"
+                  loading="eager"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                   referrerPolicy="no-referrer"
                 />
@@ -292,7 +294,7 @@ export default function App() {
       {/* ----------------- HERO SECTION ----------------- */}
       <section 
         id="top"
-        className="relative min-h-[540px] sm:min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden"
+        className="relative min-h-[540px] sm:min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden bg-[#221A10]"
       >
         {/* Background Image - optimized without heavy filters */}
         <div 
@@ -887,10 +889,12 @@ export default function App() {
             {/* Wordmark & Bio */}
             <div className="md:col-span-5 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border border-[#D97A2E] flex-shrink-0 bg-white">
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-[#D97A2E] flex-shrink-0 bg-[#362A1B] flex items-center justify-center">
                   <img
                     src="https://i.postimg.cc/9X80svDL/509362850-750281194004990-9201592945816660086-n.jpg"
                     alt="Logo Kajaki Supraśl"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
