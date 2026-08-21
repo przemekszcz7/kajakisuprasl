@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --page-bg: #F5F2E6;
+    --surface-bg: #FFFFFF;
+    --sunset-orange: #D97A2E;
+    --orange-dark: #B4611E;
+    --river-blue: #2E5E7A;
+    --color-dark: #221A10;
+    --color-muted: #8A8074;
+    --color-border: #E4DAC4;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    background-color: var(--page-bg);
+    color: var(--color-dark);
+    font-family: 'Barlow', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', cursive, sans-serif;
+  }
+}
+
+.font-fredoka {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+.font-barlow {
+  font-family: 'Barlow', sans-serif;
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+
+/* Custom smooth styling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sunset Glow Overlay */
+.sunset-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(34, 26, 16, 0.45) 0%,
+    rgba(217, 122, 46, 0.55) 50%,
+    rgba(34, 26, 16, 0.92) 100%
+  );
+}
+
+/* Optimized mobile performance utilities */
+.will-change-transform {
+  will-change: transform;
+}
+
+

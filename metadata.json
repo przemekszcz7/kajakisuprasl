@@ -1,0 +1,6 @@
+{
+  "name": "Kajaki Supraśl",
+  "description": "Wypożyczalnia kajaków i pontonów w Supraślu – spływy rzeczne i jeziorne, ogniska, sprzęt w cenie.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
