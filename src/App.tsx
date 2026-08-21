@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Phone,
   Mail,
@@ -22,9 +22,28 @@ import {
   HelpCircle
 } from 'lucide-react';
 
+// Zoptymalizowane, skompresowane adresy URL zdjęć
+const LOGO_URL = "https://i.postimg.cc/9X80svDL/509362850-750281194004990-9201592945816660086-n.jpg?w=300&q=80";[cite: 2]
+const HERO_BG_URL = "https://i.postimg.cc/CKSwRNRW/508531732-750280007338442-491750166334958096-n.jpg?w=1200&q=80";[cite: 2]
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // Natychmiastowy preload kluczowych obrazów przed wyrenderowaniem drzewa DOM
+  useEffect(() => {
+    const linkHero = document.createElement('link');
+    linkHero.rel = 'preload';
+    linkHero.as = 'image';
+    linkHero.href = HERO_BG_URL;
+    document.head.appendChild(linkHero);
+
+    const linkLogo = document.createElement('link');
+    linkLogo.rel = 'preload';
+    linkLogo.as = 'image';
+    linkLogo.href = LOGO_URL;
+    document.head.appendChild(linkLogo);
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -36,7 +55,7 @@ export default function App() {
       badge: "2 - 4 Godziny",
       title: "Spływy kilkugodzinne",
       subtitle: "Krótki relaks na wodzie",
-      desc: "Świetna opcja na aktywne popołudnie, pierwszy kontakt z kajakiem lub szybki reset po pracy pośród natury rzeki Supraśl.",
+      desc: "Świetna opcja na aktywne popołudnie, pierwszy kontakt z kajakiem lub szybki reset po pracy pośród natury rzeki Supraśl.",[cite: 2]
       icon: Clock,
       highlight: "Idealne dla początkujących i rodzin"
     },
@@ -45,7 +64,7 @@ export default function App() {
       badge: "Całodniowa przygoda",
       title: "Spływy jednodniowe",
       subtitle: "Klasyk podlaskich szlaków",
-      desc: "Najchętniej wybierana trasa. Czas na wiosłowanie, postoje na dzikich brzegach, kąpiel w czystej rzece i wspólny piknik.",
+      desc: "Najchętniej wybierana trasa. Czas na wiosłowanie, postoje na dzikich brzegach, kąpiel w czystej rzece i wspólny piknik.",[cite: 2]
       icon: Compass,
       highlight: "Najpopularniejszy wybór"
     },
@@ -54,7 +73,7 @@ export default function App() {
       badge: "Weekend & Więcej",
       title: "Wyprawy kilkudniowe",
       subtitle: "Przygoda z biwakiem i ogniskiem",
-      desc: "Wieloetapowe spływy rzekami i jeziorami z nocowaniem pod gwiazdami, klimatycznymi ogniskami i pełnym wsparciem logistycznym.",
+      desc: "Wieloetapowe spływy rzekami i jeziorami z nocowaniem pod gwiazdami, klimatycznymi ogniskami i pełnym wsparciem logistycznym.",[cite: 2]
       icon: Flame,
       highlight: "Niezapomniane wspomnienia"
     },
@@ -63,7 +82,7 @@ export default function App() {
       badge: "Spokój i stabilność",
       title: "Spływy pontonami",
       subtitle: "Wypoczynek dla każdego",
-      desc: "Wygodne, wyjątkowo stabilne i bezpieczne pontony rekreacyjne, w których komfortowo popłyną nawet najmłodsi uczestnicy.",
+      desc: "Wygodne, wyjątkowo stabilne i bezpieczne pontony rekreacyjne, w których komfortowo popłyną nawet najmłodsi uczestnicy.",[cite: 2]
       icon: Waves,
       highlight: "Super bezpieczne dla dzieci"
     }
@@ -73,37 +92,37 @@ export default function App() {
     {
       id: "feat-rental",
       title: "Wypożyczalnia kajaków i pontonów",
-      desc: "Nowoczesny, czysty i zadbany sprzęt — kajaki 1- i 2-osobowe oraz bezpieczne pontony.",
+      desc: "Nowoczesny, czysty i zadbany sprzęt — kajaki 1- i 2-osobowe oraz bezpieczne pontony.",[cite: 2]
       icon: Waves
     },
     {
       id: "feat-routes",
       title: "Piękne, malownicze trasy",
-      desc: "Meandrująca rzeka Supraśl, Puszcza Knyszyńska, krystaliczne powietrze uzdrowiska.",
+      desc: "Meandrująca rzeka Supraśl, Puszcza Knyszyńska, krystaliczne powietrze uzdrowiska.",[cite: 2]
       icon: Compass
     },
     {
       id: "feat-allin",
       title: "Sprzęt w cenie — zero ukrytych opłat",
-      desc: "Lekkie wiosła, certyfikowane kamizelki dla dorosłych i dzieci wliczone w cenę.",
+      desc: "Lekkie wiosła, certyfikowane kamizelki dla dorosłych i dzieci wliczone w cenę.",[cite: 2]
       icon: ShieldCheck
     },
     {
       id: "feat-transport",
       title: "Dowóz i odbiór na trasie",
-      desc: "Dowieziemy sprzęt i uczestników na start oraz odbierzemy po skończonym spływie.",
+      desc: "Dowieziemy sprzęt i uczestników na start oraz odbierzemy po skończonym spływie.",[cite: 2]
       icon: Truck
     },
     {
       id: "feat-bonfire",
       title: "Ogniska z klimatem",
-      desc: "Możliwość zorganizowania biesiady przy ognisku po dopłynięciu do celu.",
+      desc: "Możliwość zorganizowania biesiady przy ognisku po dopłynięciu do celu.",[cite: 2]
       icon: Flame
     },
     {
       id: "feat-prices",
       title: "Atrakcyjne, uczciwe ceny",
-      desc: "Przejrzysty cennik i elastyczne pakiety dla rodzin, grup znajomych oraz firm.",
+      desc: "Przejrzysty cennik i elastyczne pakiety dla rodzin, grup znajomych oraz firm.",[cite: 2]
       icon: Tag
     }
   ];
@@ -112,47 +131,47 @@ export default function App() {
     {
       id: "target-families",
       title: "Rodziny z dziećmi",
-      desc: "Bezpieczne akweny, dopasowane kamizelki dla maluchów i stabilny sprzęt gwarantują wspaniały dzień dla małych i dużych.",
+      desc: "Bezpieczne akweny, dopasowane kamizelki dla maluchów i stabilny sprzęt gwarantują wspaniały dzień dla małych i dużych.",[cite: 2]
       emoji: "👨‍👩‍👧‍👦"
     },
     {
       id: "target-friends",
       title: "Grupy znajomych",
-      desc: "Zorganizujcie niezapomniany wypad za miasto, rywalizację na wodzie, a na koniec relaks przy wspólnym ognisku z kiełbaskami.",
+      desc: "Zorganizujcie niezapomniany wypad za miasto, rywalizację na wodzie, a na koniec relaks przy wspólnym ognisku z kiełbaskami.",[cite: 2]
       emoji: "🛶"
     },
     {
       id: "target-companies",
       title: "Firmy i integracje",
-      desc: "Świeże powietrze, team building na rzece i wieczorny relaks. Przygotowujemy kompleksową obsługę dla małych i dużych zespołów.",
+      desc: "Świeże powietrze, team building na rzece i wieczorny relaks. Przygotowujemy kompleksową obsługę dla małych i dużych zespołów.",[cite: 2]
       emoji: "🤝"
     }
   ];
 
   const faqs = [
     {
-      q: "Czy poradzę sobie na spływie bez wcześniejszego doświadczenia?",
-      a: "Oczywiście! Rzeka Supraśl na proponowanych trasach rekreacyjnych jest spokojna i bezpieczna. Przed zwodowaniem każdego kajaka przeprowadzamy krótki instruktaż i tłumaczymy technikę wiosłowania."
+      q: "Czy poradzę sobie na spływie bez wcześniejszego doświadczenia?",[cite: 2]
+      a: "Oczywiście! Rzeka Supraśl na proponowanych trasach rekreacyjnych jest spokojna i bezpieczna. Przed zwodowaniem każdego kajaka przeprowadzamy krótki instruktaż i tłumaczymy technikę wiosłowania."[cite: 2]
     },
     {
-      q: "Co jest wliczone w cenę wypożyczenia?",
-      a: "W cenie otrzymujesz czysty kajak lub ponton, lekkie wiosła oraz certyfikowane kamizelki asekuracyjne (posiadamy również rozmiary dla dzieci). Brak jakichkolwiek ukrytych opłat!"
+      q: "Co jest wliczone w cenę wypożyczenia?",[cite: 2]
+      a: "W cenie otrzymujesz czysty kajak lub ponton, lekkie wiosła oraz certyfikowane kamizelki asekuracyjne (posiadamy również rozmiary dla dzieci). Brak jakichkolwiek ukrytych opłat!"[cite: 2]
     },
     {
-      q: "Co warto ze sobą zabrać na spływ?",
-      a: "Zalecamy wygodny strój sportowy dostosowany do pogody, nakrycie głowy, krem z filtrem UV, okulary przeciwsłoneczne, wodę do picia, przekąski oraz nieprzemakalne etui lub worek na telefon i dokumenty."
+      q: "Co warto ze sobą zabrać na spływ?",[cite: 2]
+      a: "Zalecamy wygodny strój sportowy dostosowany do pogody, nakrycie głowy, krem z filtrem UV, okulary przeciwsłoneczne, wodę do picia, przekąski oraz nieprzemakalne etui lub worek na telefon i dokumenty."[cite: 2]
     },
     {
-      q: "Czy na spływ mogą płynąć małe dzieci?",
-      a: "Tak! Kajakarstwo to wspaniała forma rodzinnego spędzania czasu. Dzieci mogą płynąć w kajakach dwuosobowych z rodzicem lub w wyjątkowo stabilnych pontonach. Każde dziecko obowiązkowo płynie w dobrze dopasowanej kamizelce asekuracyjnej."
+      q: "Czy na spływ mogą płynąć małe dzieci?",[cite: 2]
+      a: "Tak! Kajakarstwo to wspaniała forma rodzinnego spędzania czasu. Dzieci mogą płynąć w kajakach dwuosobowych z rodzicem lub w wyjątkowo stabilnych pontonach. Każde dziecko obowiązkowo płynie w dobrze dopasowanej kamizelce asekuracyjnej."[cite: 2]
     },
     {
-      q: "Czy zapewniacie transport sprzętu i osób?",
-      a: "Tak, zajmujemy się kompletną logistyką — dowozimy sprzęt na wybrane miejsce startu oraz odbieramy uczestników po zakończonym spływie z mety."
+      q: "Czy zapewniacie transport sprzętu i osób?",[cite: 2]
+      a: "Tak, zajmujemy się kompletną logistyką — dowozimy sprzęt na wybrane miejsce startu oraz odbieramy uczestników po zakończonym spływie z mety."[cite: 2]
     },
     {
-      q: "Jak najlepiej dokonać rezerwacji?",
-      a: "Najszybszym i najwygodniejszym sposobem jest bezpośredni kontakt telefoniczny pod numerem 664 786 404 lub 664 706 625. Odpowiemy na wszystkie pytania i zarezerwujemy sprzęt."
+      q: "Jak najlepiej dokonać rezerwacji?",[cite: 2]
+      a: "Najszybszym i najwygodniejszym sposobem jest bezpośredni kontakt telefoniczny pod numerem 664 786 404 lub 664 706 625. Odpowiemy na wszystkie pytania i zarezerwujemy sprzęt."[cite: 2]
     }
   ];
 
@@ -172,9 +191,11 @@ export default function App() {
             >
               <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D97A2E] flex-shrink-0 bg-[#F5F2E6] flex items-center justify-center shadow-xs">
                 <img
-                  src="https://i.postimg.cc/9X80svDL/509362850-750281194004990-9201592945816660086-n.jpg"
+                  src={LOGO_URL}
                   alt="Kajaki Supraśl logo"
                   loading="eager"
+                  // @ts-ignore
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                   referrerPolicy="no-referrer"
@@ -296,14 +317,15 @@ export default function App() {
         id="top"
         className="relative min-h-[540px] sm:min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden bg-[#221A10]"
       >
-        {/* Background Image - optimized without heavy filters */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://i.postimg.cc/CKSwRNRW/508531732-750280007338442-491750166334958096-n.jpg')`
-          }}
-          role="img"
-          aria-label="Kajaki na rzece o zachodzie słońca"
+        {/* Zoptymalizowany element <img> zamiast background-image dla natychmiastowego renderowania LCP */}
+        <img
+          src={HERO_BG_URL}
+          alt="Kajaki na rzece o zachodzie słońca"
+          loading="eager"
+          // @ts-ignore
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* Warm Sunset Gradient Overlay */}
@@ -891,7 +913,7 @@ export default function App() {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden border border-[#D97A2E] flex-shrink-0 bg-[#362A1B] flex items-center justify-center">
                   <img
-                    src="https://i.postimg.cc/9X80svDL/509362850-750281194004990-9201592945816660086-n.jpg"
+                    src={LOGO_URL}
                     alt="Logo Kajaki Supraśl"
                     loading="lazy"
                     decoding="async"
